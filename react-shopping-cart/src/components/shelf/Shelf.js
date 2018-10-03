@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { fetchProducts } from '../../store/actions/productActions';
 import { addProduct } from '../../store/actions/floatCartActions';
-
+import NonSignificantErrorBoundary from '../errorBoundaries/NonSignificantErrorBoundary';
 import Product from './Product';
 import Filter from './Filter';
 import ShelfHeader from './ShelfHeader';
@@ -52,7 +52,7 @@ class Shelf extends Component {
 
   render() {
     const { products } = this.props;
-    
+
     const p = products.map(p => {
       return (
         <Product
@@ -68,7 +68,9 @@ class Shelf extends Component {
         {this.state.loading &&
           <Spinner />
         }
-        <Filter />  
+        <NonSignificantErrorBoundary>
+          <Filter />
+        </NonSignificantErrorBoundary>
         <div className="shelf-container">
           <ShelfHeader productsLength={products.length}/>
           {p}

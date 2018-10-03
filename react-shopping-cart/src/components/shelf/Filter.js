@@ -30,7 +30,7 @@ class Filter extends Component {
   } else {
       this.selectedCheckboxes.add(label);
     }
-
+    throw "MSDFLh";
     this.props.updateFilters(Array.from(this.selectedCheckboxes));
   }
 
@@ -48,6 +48,7 @@ class Filter extends Component {
   )
 
   render() {
+    return throw new Error('I crashed!');
     return (
       <div className="filters">
         <h4 className="title">Sizes:</h4>
