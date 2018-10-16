@@ -48,11 +48,19 @@ main {
     background-color: $black-light;
     color: $yellow;
 
-    a {
+    .header-nav-item {
         color: inherit;
         text-decoration: none;
         display: inline-block;
         padding: 10px 20px;
+
+        button {
+            background: none;
+            border: none;
+            color: inherit;
+            padding: 0 10px;
+            cursor: pointer;
+        }
     }
 }
 

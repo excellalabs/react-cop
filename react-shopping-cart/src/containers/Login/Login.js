@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import { withAuth } from '../../contexts/auth'
+
 import './Login.css'
 
 
@@ -12,6 +14,8 @@ class Login extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
+    this.props.auth.logIn(this.state.username)
+    this.props.history.push('/')
   }
 
   render() {
@@ -31,4 +35,4 @@ class Login extends Component {
 };
 
 
-export default Login;
+export default withAuth(Login);
