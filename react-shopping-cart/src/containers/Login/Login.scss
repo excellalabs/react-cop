@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+
+$yellow: #eabf00;
+$black-light: #1b1a20;
+$grey: #ececec;
+
+.login {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  font-family: 'Roboto', sans-serif;
+
+  form {
+    background-color: $grey;
+    margin: 100px 0;
+    padding: 10px 30px;
+
+    h2 {
+      text-align: center;
+    }
+
+    label {
+      padding: 0 5px;
+    }
+
+    input {
+
+    }
+
+    button {
+      width: 100%;
+      background-color: $black-light;
+      color: $yellow;
+      margin-top: 10px;
+      padding: 5px 0;
+      cursor: pointer;
+    }
+  }
+}

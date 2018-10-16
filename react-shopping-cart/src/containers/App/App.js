@@ -1,17 +1,14 @@
 import React, { Component } from 'react';
-import './App.css';
-
-import bannerImage from '../static/banner.jpg';
-
 import { Provider } from 'react-redux';
 
+import store from '../../store';
 
-import Shelf from '../components/shelf/Shelf';
-import Footer from '../components/Footer';
-import FloatCart from './../components/floatCart/FloatCart';
+import Shelf from '../../components/shelf/Shelf';
+import Header from '../../components/Header'
+import Footer from '../../components/Footer';
+import FloatCart from '../../components/floatCart/FloatCart';
 
-import store from '../store';
-import Corner from '../components/github/Corner';
+import './App.css';
 
 
 class App extends Component {
@@ -19,7 +16,7 @@ class App extends Component {
     return (
       <Provider store={store}>
         <div className="App">
-          <Corner />
+          <Header />
           <main>
             <Shelf />
           </main>
