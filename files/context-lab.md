@@ -13,7 +13,7 @@ The steps to take are:
 1. Render the Provider component at the root of the application (`index.js`) to allow the entire component tree to access authentication state
 1. Capture the value of the entered `username` at the sign in page and store it in global state (the Provider component) via the Context
 1. Access the same `username` value via the Context in the main application page (at `/`) and display it in place of the "Sign In" link
-  - When a user is signed in, show the username, otherwise show the "Sign In" link
+    - When a user is signed in, show the username, otherwise show the "Sign In" link
 1. (Bonus) Add functionality to "Sign Out"
 
 ### Step 1
@@ -28,6 +28,8 @@ First, you need to create the Context that the application will use to share the
 const AuthContext = React.createContext()
 ```
 </details>
+
+---
 
 Next, create a component that will wrap a passed `children` component in the `Provider` component from the Context you created before. This is the component you will render at the root of the application to provide access to authentication state. 
 
@@ -48,6 +50,8 @@ export class AuthProvider extends Component {
 }
 ```
 </details>
+
+---
 
 Then, build into this component the state and API for managing authentication:
 
@@ -87,7 +91,9 @@ export class AuthProvider extends Component {
   }
 }
 ```
-</details>
+</details>  
+
+---
 
 Finally, to make it easier to access the values and methods passed by the Provider, define a [Higher-Order Component](https://reactjs.org/docs/higher-order-components.html) that uses the Context's `Consumer` component to unpackage these values and methods and add them as `props` to a passed component. While you could use the Context's `Consumer` component directly in our other components to do this, this abstraction will make the code more readable and DRY.
 
@@ -107,7 +113,8 @@ export const withAuth = (Component) => {
 
 // `auth` is the object literal passed as `value` to `AuthContext.Provider`
 ```
-</details>
+</details>  
+
 
 
 ### Step 2
@@ -138,7 +145,9 @@ const Routes = () => {
 
 // ...
 ```
-</details>
+</details>  
+
+
 
 ### Step 3
 Now connect the `Login` component via the Context and use the passed login functionality to set the `username` in global state (in the custom Provider component) when the user submits the form.
@@ -163,7 +172,9 @@ import { withAuth } from '../../contexts/auth'
 
 export default withAuth(Login);
 ```
-</details>
+</details>  
+
+
 
 ### Step 4
 Finally, update the `Header` component to retrieve authentication state via the Context and conditionally show the username instead of the "Sign In" link.
@@ -204,11 +215,14 @@ const Header = (props) => {
 
 export default withAuth(Header);
 ```
-</details>
+</details>  
+
+
 
 ### Bonus
 In the `Header`, next to the username, provide a button to "Log Out" when there is a user logged in. Update the custom Provider component with a method to log out, pass this method via the Context, and call it in the `Header`. Check out the `context-lab-solution` branch for the full solution. 
 
 
 ## Useful Resources
+- [Context Documentation](https://reactjs.org/docs/context.html)
 - [React's Context API explained: Provider and Consumer](https://www.robinwieruch.de/react-context-api/)
