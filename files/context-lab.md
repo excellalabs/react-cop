@@ -151,6 +151,7 @@ const Routes = () => {
 
 ### Step 3
 Now connect the `Login` component via the Context and use the passed login functionality to set the `username` in global state (in the custom Provider component) when the user submits the form.
+> Optionally use React Router's `history.push()` method to redirect to the main app on login. 
 
 <details>
 <summary>Solution</summary>
