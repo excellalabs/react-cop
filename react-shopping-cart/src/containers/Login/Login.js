@@ -6,6 +6,13 @@ import './Login.css'
 
 
 class Login extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      username: null
+    }
+  }
+  
   handleInput = (e) => {
     this.setState({
       [e.target.name]: e.target.value
