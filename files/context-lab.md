@@ -13,7 +13,7 @@ The steps to take are:
 1. Render the Provider component at the root of the application (`index.js`) to allow the entire component tree to access authentication state
 1. Capture the value of the entered `username` at the sign in page and store it in global state (the Provider component) via the Context
 1. Access the same `username` value via the Context in the main application page (at `/`) and display it in place of the "Sign In" link
-  - When a user is signed in, show the username, otherwise show the "Sign In" link
+    - When a user is signed in, show the username, otherwise show the "Sign In" link
 1. (Bonus) Add functionality to "Sign Out"
 
 ### Step 1
