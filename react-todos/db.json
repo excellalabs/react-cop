@@ -1,24 +1,19 @@
 {
   "todos": [
     {
-      "title": "Go to School",
+      "title": "Eat Lunch",
       "isComplete": false,
       "id": 1
     },
     {
-      "title": "Beat Auburn",
+      "title": "Learn CSS Modules",
       "isComplete": false,
       "id": 2
     },
     {
-      "title": "Beat ND",
+      "title": "Level Up",
       "isComplete": false,
       "id": 3
-    },
-    {
-      "title": "Test",
-      "isComplete": false,
-      "id": 4
     }
   ]
 }

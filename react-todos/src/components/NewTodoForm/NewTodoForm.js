@@ -33,7 +33,7 @@ class NewTodoForm extends Component {
         <input 
           type ="text" 
           name="title"
-          placeholder="Add New Todo"
+          placeholder="Add New"
           value={this.state.title}
           onChange={this.handleInput}
         />

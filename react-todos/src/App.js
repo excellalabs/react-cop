@@ -53,7 +53,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <h1>My Todos</h1>
+        <h1>To Do</h1>
         <NewTodoForm addTodo={this.addTodo} />
         <TodoList 
           items={this.state.todos} 
