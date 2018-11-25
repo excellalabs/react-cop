@@ -1,0 +1,24 @@
+{
+  "todos": [
+    {
+      "title": "Go to School",
+      "isComplete": false,
+      "id": 1
+    },
+    {
+      "title": "Beat Auburn",
+      "isComplete": false,
+      "id": 2
+    },
+    {
+      "title": "Beat ND",
+      "isComplete": false,
+      "id": 3
+    },
+    {
+      "title": "Test",
+      "isComplete": false,
+      "id": 4
+    }
+  ]
+}
