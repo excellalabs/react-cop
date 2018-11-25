@@ -9,8 +9,7 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      todos: [],
-      newTodo: null
+      todos: []
     }
   }
 
@@ -27,7 +26,7 @@ class App extends Component {
       })
   }
 
-  addTodo = (newTodo) => {
+  addTodo = async (newTodo) => {
     return axios.post('/todos', newTodo)
       .then(() => {
         this.fetchTodos()
