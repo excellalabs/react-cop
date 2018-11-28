@@ -18,12 +18,16 @@ class FormC extends Component {
 
     componentDidMount() {
         document.title = this.state.firstName + "'s Application";
-        window.addEventListener('resize', this.handleResize)
+        window.addEventListener('resize', this.handleResize);
     };
 
     componentDidUpdate() {
         document.title = this.state.firstName + "'s Application";
     };
+
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.handleResize);
+    }
 
     handleResize = () => {
         this.setState({
