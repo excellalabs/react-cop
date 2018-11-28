@@ -10,18 +10,26 @@ class FormC extends Component {
             firstName: 'Newton',
             lastName: 'Smells',
             applied: false,
-            status: ''
+            status: '',
+            width: window.innerWidth
         }
 
     }
 
     componentDidMount() {
         document.title = this.state.firstName + "'s Application";
+        window.addEventListener('resize', this.handleResize)
     };
 
     componentDidUpdate() {
         document.title = this.state.firstName + "'s Application";
     };
+
+    handleResize = () => {
+        this.setState({
+            width: window.innerWidth
+        });
+    }
 
     handleFirstNameChange = (e) => {
         this.setState({
@@ -64,6 +72,7 @@ class FormC extends Component {
                     <LocaleContext.Consumer>
                         {localeVal => localeVal.locale}
                     </LocaleContext.Consumer>
+                    {this.state.width}
                 </section>
             )
         }

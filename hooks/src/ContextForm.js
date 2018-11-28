@@ -9,9 +9,18 @@ export default function FormD() {
     const [status, setStatus] = useState('');
     const [applied, setApplied] = useState(false);
     const locale = useContext(LocaleContext);
+    const [width, setWidth] = useState(window.innerWidth);
 
     useEffect(() => {
-        document.title = firstName + "'s Application";
+        const handleResize = () => setWidth(window.innerWidth);
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    });
+
+    useEffect(() => {
+        document.title = firstName + ' ' + lastName + "'s Application";
     });
 
     function handleFirstNameChange(e) {
@@ -34,17 +43,17 @@ export default function FormD() {
         setApplied(false)
     }
 
-
     if (applied) {
         return (
             <section>
-                <h1>Da Future Application Status:</h1>
+                <h1>Hooks Application Status:</h1>
                 <h2>{firstName} {lastName} was {status}</h2>
 
                 <button onClick={reset}>
                     Reset
                 </button>
                 <h2>{locale.locale}</h2>
+                <h1>{width}</h1>
             </section>
         )
     }
@@ -68,5 +77,4 @@ export default function FormD() {
             </button>
         </section>
     );
-
 }
