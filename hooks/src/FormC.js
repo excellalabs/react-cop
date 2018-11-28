@@ -7,8 +7,8 @@ class FormC extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            firstName: 'Leroy',
-            lastName: 'Jenkins',
+            firstName: 'Newton',
+            lastName: 'Smells',
             applied: false,
             status: ''
         }
@@ -90,4 +90,4 @@ class FormC extends Component {
     }
 }
 
-export default Form;
+export default FormC;

@@ -4,8 +4,8 @@ import { decisionMaker } from './decisionMaker';
 import { LocaleContext } from './context';
 
 export default function FormD() {
-    const [firstName, setFirstName] = useState('Leroy');
-    const [lastName, setLastName] = useState('Jenkins');
+    const [firstName, setFirstName] = useState('Newton');
+    const [lastName, setLastName] = useState('Smells');
     const [status, setStatus] = useState('');
     const [applied, setApplied] = useState(false);
     const locale = useContext(LocaleContext);
