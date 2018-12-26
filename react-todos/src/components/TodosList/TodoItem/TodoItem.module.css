@@ -1,0 +1,62 @@
+.container {
+  margin: 0.5em 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.input {
+  flex-grow: 1;
+  font-size: 1em;
+  border: none;
+  outline: none;
+}
+
+.removeItemButton {
+  font-size: 1em;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.removeItemButton:hover {
+  color: rgba(0, 0, 0, 1);
+}
+
+/* Make default checkbox invisible */
+.checkbox {
+  opacity: 0;
+  height: 16px;
+  width: 16px;
+  z-index: 10;
+  cursor: pointer;
+}
+
+/* Add custom checkbox */
+.container::before{
+  content: "";
+  display: inline-block;
+  
+  height: 16px;
+  width: 16px;
+  
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  position: absolute;
+  left: 0;
+}
+
+.container.completed::after {
+  content: "";
+  display: inline-block;
+  height: 6px;
+  width: 14px;
+  border-left: 2px solid;
+  border-bottom: 2px solid;
+  
+  transform: rotate(-45deg);
+  position: absolute;
+  left: 0.2em;
+  bottom: 0.7em;
+}

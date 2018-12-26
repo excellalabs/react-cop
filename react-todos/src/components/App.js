@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 
-import NewTodoForm from './components/NewTodoForm/NewTodoForm'
-import TodoList from './components/TodosList/TodosList'
+import NewTodoForm from './NewTodoForm/NewTodoForm'
+import TodoList from './TodosList/TodosList'
+
+import styles from './App.module.css'
 
 
 class App extends Component {
@@ -51,8 +53,8 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        <h1>To Do</h1>
+      <div className={styles.container}>
+        <h1 className={styles.header}>To Do</h1>
         <NewTodoForm addTodo={this.addTodo} />
         <TodoList 
           items={this.state.todos} 

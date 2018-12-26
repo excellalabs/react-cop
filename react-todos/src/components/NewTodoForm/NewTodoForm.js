@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 
+import styles from './NewTodoForm.module.css'
+
 const initialState= {
   title: ""
 }
@@ -36,6 +38,7 @@ class NewTodoForm extends Component {
           placeholder="Add New"
           value={this.state.title}
           onChange={this.handleInput}
+          className={styles.input}
         />
       </form>
     )

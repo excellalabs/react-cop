@@ -1,5 +1,7 @@
 import React from 'react'
 
+import styles from './TodoItem.module.css'
+
 const TodoItem = (props) => {
   const { item, updateTodo, deleteTodo } = props
 
@@ -17,11 +19,13 @@ const TodoItem = (props) => {
     })
   }
 
+  const itemStyles = item.isComplete ? `${styles.container} ${styles.completed}` : styles.container
+
   return (
-    <div>
-      <input type="checkbox" checked={item.isComplete} onChange={toggleCompleted} />
-      <input type="text" value={item.title} onChange={updateTitle} />
-      <button onClick={() => deleteTodo(item.id)}>X</button>
+    <div className={itemStyles}>
+      <input type="checkbox" checked={item.isComplete} onChange={toggleCompleted} className={styles.checkbox} />
+      <input type="text" value={item.title} onChange={updateTitle} className={styles.input} />
+      <button onClick={() => deleteTodo(item.id)} className={styles.removeItemButton}>X</button>
     </div>
   )
 }
