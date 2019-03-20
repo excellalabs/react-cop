@@ -208,4 +208,9 @@ import styles from './TodoItem.module.css'
   <button class="TodoItem_removeItemButton__2qEaG">X</button>
 </div>
 ```
+Separate from CSS Modules, you can optionally install and use the [classnames](www.google.com) package to make class composition a little cleaner. Example:
+```js
+import cn from classnames
 
+const itemStyles = cn(styles.container, styles.completed)
+```
